@@ -1,0 +1,349 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+/* Variables */
+  :root{
+    --BodyFontsFamily: 'Work Sans', sans-serif;
+    --MainColor: #314584;
+    --MainAltColor: #FF3946;
+    --MainTransition: 0.4s;
+    --MainPaddingTop: 100px;
+    --MainPaddingBottom: 100px;
+  }
+/* Global Rules */
+  *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background-color: black;
+    color: var(--MainAltColor);
+  }
+  body{
+    font-family: var(--BodyFontsFamily);
+    color: black;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .bth {
+    display: block;
+    width: fit-content;
+    text-transform: capitalize;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--MainTransition);
+  }
+  i {
+    cursor: pointer;
+  }
+  h1, h2, h3 {
+    text-transform: capitalize;
+  }
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+/* Small Screen */
+  @media (min-width: 768px) {
+    .container{
+      width: 750px;
+    }
+  }
+/* Medium Screen */
+  @media (min-width: 992px) {
+    .container{
+      width: 970px;
+    }
+  }
+/* Lager Screen*/
+  @media (min-width: 1200px) {
+    .container{
+      width: 1170px;
+    }
+  }
+/* Styling The Header Section */
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 50px;
+  }
+  .logo-img {
+    vertical-align: middle;
+  }
+  header .check {
+    display: none;
+  }
+  header .check + .bars{
+    width: 30px;
+    height: 18px;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 15px;
+    cursor: pointer;
+  }
+  header .check + .bars span {
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    transition: var(--MainTransition);
+  }
+  header .check + .bars span:first-child {
+    top: 0;
+  }
+  header .check + .bars span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  header .check + .bars span:last-child {
+    bottom: 0;
+  }
+  header .check:checked + .bars span:first-child {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  header .check:checked + .bars span:nth-child(2) {
+    display: none;
+  }
+  header .check:checked + .bars span:last-child {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+  .main-nav {
+    display: flex;
+  }
+  .main-nav > li > a {
+    text-transform: capitalize;
+    color: var(--MainColor);
+    display: block;
+    font-size: 1.125rem;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--MainTransition);
+  }
+  .main-nav  li  a:hover {
+    color: var(--MainAltColor);
+  }
+  .main-nav > li:not(:last-child) > a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 4px solid var(--MainAltColor);
+    width: 0%;
+    transition: var( --MainTransition);
+  }
+  .main-nav > li > a:hover::before {
+    width: 100%;
+  }
+  .main-nav > li:last-child > a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border-width: 5px;
+    border-bottom-width: 0;
+    border-style: solid;
+    border-color: var(--MainColor) transparent  transparent  transparent;
+    transition: var( --MainTransition);
+  }
+  .main-nav > li:last-child > a:hover::after {
+  border-color: var(--MainAltColor) transparent  transparent  transparent;
+  transform: rotate(180deg);
+  }
+  header .main-menu {
+    position: absolute;
+    background-color: var(--MainColor);
+    width: 160px;
+    padding: 8px 0;
+    border-radius: 4px;
+    display: none;
+  }
+  .main-nav > li:last-child:hover .main-menu {
+    display: block;
+  }
+  header .menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 0px;
+    padding: 8px 0;
+  }
+  header .contact.bth {
+    width: 200px;
+    height: 60px;
+    color: var(--MainAltColor);
+    background: linear-gradient(to right, #fff 50%, var(--MainAltColor) 50%);
+    background-size: 200% 99%;
+    background-position: left bottom;
+    border: none;
+    font-size: 20px;
+    -moz-box-shadow: 0px 4px 6px 0px rgb(30 32 33 / 7%);
+    -webkit-box-shadow: 0px 4px 6px 0px rgb(30 32 33 / 7%);
+    box-shadow: 0px 4px 6px 0px rgb(30 32 33 / 7%);
+  }
+  header .contact.bth:hover {
+    background-position: right bottom;
+    color: #fff;
+  }
+/* ----- Making The Header Section Responsive ----- */
+  @media (max-width: 1199px) {
+    header .contact.bth {
+      font-size: 16px;
+      width: 150px;
+    }
+    .main-nav > li > a {
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 992px) {
+    header .check + .bars {
+      display: none;
+    }
+  }
+  @media (max-width: 991px) {
+    header .contact.bth {
+      display: none;
+    }
+    header .main-nav {
+      display: none;
+    }
+    header .check:checked ~ .main-nav {
+      position: absolute;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      top: calc(100% + 1px);
+      background-color: rgb(255 255 255 / 95%);
+      z-index: 1;
+    }
+    .main-nav > li > a {
+      padding: 20px;
+      font-size: 28px;
+    }
+    header .main-menu {
+      width: 75%;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  }
+/* Styling The Landing Section */
+  .landing > img {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 125px;
+    z-index: -1;
+  }
+  .landing-content {
+    margin-top: 250px;
+  }
+  .landing-title {
+    color: var(--MainColor);
+    font-size: 70px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .landing-des {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #6E757A;
+    margin-bottom: 50px;
+  }
+  .landing .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .landing .bth, 
+  .landing .touch-bth{
+    padding: 18px 36px;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  .landing .more.bth {
+    background-color: var(--MainColor);
+    color: white;
+    border-radius: 50px;
+    border-color: var(--MainColor);
+    -moz-box-shadow: 0px 4px 5px 0px rgb(49 69 132 / 20%);
+    -webkit-box-shadow: 0px 4px 5px 0px rgb(49 69 132 / 20%);
+    box-shadow: 0px 4px 5px 0px rgb(49 69 132 / 20%);
+  }
+  .landing .more.bth:hover {
+    background-color: white;
+    color: var(--MainColor);
+  }
+  .buttons .touch-bth {
+    color: var(--MainAltColor);
+    transition: var(--MainTransition);
+  }
+  .buttons .touch-bth:hover {
+    color: var(--MainColor);
+  }
+/* ----- Making The Landing Section Responsive ----- */
+  @media (max-width: 991px) {
+    .landing > img {
+      display: none;
+    }
+    .landing-content {
+      margin-top: 100px;
+      text-align: center;
+    }
+    .landing .buttons {
+      justify-content: center;
+    }
+    .landing-title {
+      font-size: 60px;
+    }
+  }
+  @media (max-width: 575px) {
+    .landing-content {
+      margin-top: 75px;
+    }
+    .landing-title {
+      font-size: 50px;
+    }
+    .landing .buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .landing .bth, 
+    .landing .touch-bth{
+      padding: 16px 32px;
+      font-size: 16px;
+    }
+  }
+/* Styling The About Section */
+  
+/* ----- Making The About Section Responsive ----- */
