@@ -53,6 +53,7 @@
   }
   h1, h2, h3 {
     text-transform: capitalize;
+    color: var(--MainColor);
   }
   .container {
     padding-left: 15px;
@@ -173,7 +174,7 @@
   }
   .main-nav > li:last-child > a:hover::after {
   border-color: var(--MainAltColor) transparent  transparent  transparent;
-  transform: rotate(180deg);
+  transform: rotate(-180deg);
   }
   header .main-menu {
     position: absolute;
@@ -262,14 +263,13 @@
     width: 50%;
     position: absolute;
     right: 0;
-    top: 125px;
+    top: 20px;
     z-index: -1;
   }
   .landing-content {
     margin-top: 250px;
   }
   .landing-title {
-    color: var(--MainColor);
     font-size: 70px;
     margin: 0;
     margin-bottom: 20px;
@@ -312,6 +312,11 @@
     color: var(--MainColor);
   }
 /* ----- Making The Landing Section Responsive ----- */
+  @media (max-width: 1349px) {
+    .landing > img {
+      top: 150px;
+    }
+  }
   @media (max-width: 991px) {
     .landing > img {
       display: none;
@@ -342,6 +347,141 @@
     .landing .touch-bth{
       padding: 16px 32px;
       font-size: 16px;
+    }
+  }
+/* Styling The Services Section */
+  .services {
+    padding-top: calc(var(--MainPaddingTop) + 100px);
+    padding-bottom: var(--MainPaddingBottom);
+  }
+  .services .aside-img,
+  .services .aside2-img {
+    position: absolute;
+    z-index: -1;
+  }
+  .services .aside-img {
+    left: -30px;
+  }
+  .services .aside2-img {
+    right: 0;
+    margin-top: 375px;
+  }
+  .services .container {
+    display: flex;
+    gap: 30px;
+  }
+  .services-content {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .services-title {
+    text-transform: none;
+    font-size: 2.6rem;
+    line-height: 1.4;
+    margin-bottom: 50px;
+  }
+  .services .touch.bth {
+    box-shadow: inset 0 0 0 30px var(--MainAltColor);
+    border-color: var(--MainAltColor);
+    color: white;
+    padding: 17px 35px;
+    border-radius: 30px;
+  }
+  .services .touch.bth:hover {
+    box-shadow: inset 0 0 0 0 #fff;
+    color: var(--MainAltColor);
+  }
+  .services .services-boxes {
+    flex: 0 0 66.666666%;
+    max-width: 66.666666%;
+    display: flex;
+    gap: 30px;
+  }
+  .services .service-box {
+    flex-basis: 50%;
+    max-width: 50%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 3px 7px rgb(28 31 33 / 15%);
+    -moz-box-shadow: 0 3px 7px rgb(28 31 33 / 15%);
+    box-shadow: 0 3px 7px rgb(28 31 33 / 15%);
+    padding: 40px 38px;
+    margin: 10px;
+  }
+  .services .service-img {
+    margin-bottom: 30px;
+  }
+  .services .service-title {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  .services .service-des {
+    color: var(--MainColor);
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+  }
+/* ----- Making The Services Section Responsive ----- */
+  @media (max-width: 1199px) {
+    .services .container {
+      gap: 10px;
+    }
+    .services-title {
+      font-size: 34px;
+    }
+    .services .service-title {
+      font-size: 24px;
+    }
+    .services .service-des {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 991px) {
+    .services {
+      padding-top: calc(var(--MainPaddingTop) + 25px);
+    }
+    .services .container {
+      flex-wrap: wrap;
+      gap: 60px;
+      align-items: center;
+      justify-content: center;
+    }
+    .services-content {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .services-title {
+      text-align: center;
+    }
+    .services .touch.bth {
+      margin: 0 auto;
+    }
+    .services .services-boxes {
+      flex: 0 0 95%;
+      max-width: 95%;
+      justify-content: center;
+      align-items: center;
+    }
+    .services .service-box {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    .services .service-box {
+      height: 375px;
+    }
+  }
+  @media (max-width: 575px) {
+    .services .aside2-img {
+      margin-top: 550px;
+    }
+    .services .services-boxes {
+      flex-direction: column;
+    }
+    .services .service-box {
+      max-width: 300px;
     }
   }
 /* Styling The About Section */
