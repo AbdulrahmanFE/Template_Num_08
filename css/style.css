@@ -370,7 +370,7 @@
     left: -30px;
   }
   .services .aside.img2 {
-    right: -20px;
+    right: 0;
     margin-top: 450px;
   }
   .services .container {
@@ -447,7 +447,6 @@
     }
     .services .aside.img2 {
       display: none;
-      right: 0;
     }
     .services .container {
       flex-direction: column;
