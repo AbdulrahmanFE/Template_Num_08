@@ -762,17 +762,18 @@
     opacity: 0;
   }
   .contact-form .sub.bth {
-    background: linear-gradient(to right, white 50%, var(--MainAltColor) 50%);
-    background-size: 201% 1%;
-    background-position: right bottom;
+    background-color: var(--MainAltColor);
     border-color: var(--MainAltColor);
     color: white;
-    padding: 17px 35px;
+    padding: 18px 36px;
     border-radius: 30px;
     margin: 20px auto 0;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
   }
   .contact-form .sub.bth:hover {
-    background-position: left bottom;
+    background-color: white;
     color: var(--MainAltColor);
   }
 /* ----- Making The Contact Section Responsive ----- */
@@ -789,5 +790,72 @@
     }
   }
 /* Styling The Footer Section */
-
+  footer {
+    background-color: #314584;
+    padding-top: calc(var(--MainPaddingTop) - 25px);
+  }
+  footer > * {
+    color: white;
+  }
+  footer .container {
+    text-align: center;
+  }
+  footer .title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  footer .des {
+    color: var(--MainAltColor);
+    font-size: 40px;
+    margin: 18px auto 30px;
+  }
+  footer .links {
+    margin-bottom: 50px;
+  }
+  footer .links a {
+    font-size: 18px;
+    padding: 20px;
+    color: #fff;
+    transition: var(--MainTransition);
+  }
+  footer .links a:hover {
+    color: var(--MainAltColor);
+  }
+  footer .copyright {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  footer .social a {
+    color: white;
+    font-size: 48px;
+    margin: 0px 30px;
+    transition: var(--MainTransition);
+  }
+  footer .social a:hover {
+    color: var(--MainAltColor);
+  }
+  footer .coded {
+    text-align: center;
+    margin: 50px auto 0;
+    padding: 25px 15px;
+    border-top: 1px solid #fff;
+    text-transform: capitalize;
+  }
+  footer .coded .author {
+    color: var(--MainAltColor);
+    font-weight: 700;
+  }
 /* ----- Making The Footer Section Responsive ----- */
+  @media (max-width: 675px) {
+    footer .links a,
+    footer .social a {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+    footer .social a {
+      margin: 30px auto;
+    }
+  }
