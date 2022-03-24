@@ -447,6 +447,7 @@
     }
     .services .aside.img2 {
       display: none;
+      right: 0;
     }
     .services .container {
       flex-direction: column;
