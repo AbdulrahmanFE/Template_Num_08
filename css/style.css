@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
 /* Variables */
   :root{
     --BodyFontsFamily: 'Work Sans', sans-serif;
@@ -101,64 +101,71 @@
   .logo-img {
     vertical-align: middle;
   }
-  header .check {
+  header .main-nav .check {
     display: none;
   }
-  header .check + .bars{
+  header .main-nav .check + .burger {
+    z-index: 1;
     width: 30px;
     height: 18px;
     position: absolute;
+    top: 50%;
     transform: translateY(-50%);
     right: 15px;
     cursor: pointer;
   }
-  header .check + .bars span {
-    width: 100%;
+  header .main-nav .check + .burger span {
     height: 4px;
-    border-radius: 5px;
+    width: 100%;
     background-color: #000;
+    border-radius: 4px;
     position: absolute;
-    left: 0;
+    right: 0;
     transition: var(--MainTransition);
   }
-  header .check + .bars span:first-child {
+  header .main-nav .check + .burger span:first-child {
     top: 0;
   }
-  header .check + .bars span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  header .check + .bars span:last-child {
-    bottom: 0;
-  }
-  header .check:checked + .bars span:first-child {
+  header .main-nav .check:checked + .burger span:first-child {
     top: 50%;
     transform: rotate(45deg);
   }
-  header .check:checked + .bars span:nth-child(2) {
-    display: none;
+  header .main-nav .check + .burger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
   }
-  header .check:checked + .bars span:last-child {
+  header .main-nav .check:checked + .burger span:nth-child(2) {
+    opacity: 0;
+  }
+  header .main-nav .check + .burger span:last-child {
+    bottom: 0;
+  }
+  header .main-nav .check:checked + .burger span:last-child {
     top: 50%;
     transform: rotate(-45deg);
   }
-  .main-nav {
+  header .main-nav ul {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .main-nav > li > a {
+  header .main-nav ul li {
+    position: relative;
+  }
+  header .main-nav ul a {
+    display: block;
     text-transform: capitalize;
     color: var(--MainColor);
-    display: block;
-    font-size: 1.125rem;
+    font-size: 18px;
     padding: 16px;
     position: relative;
     overflow: hidden;
     transition: var(--MainTransition);
   }
-  .main-nav  li  a:hover {
+  header .main-nav ul a:hover {
     color: var(--MainAltColor);
   }
-  .main-nav > li:not(:last-child) > a::before {
+  header .main-nav ul > li:not(:last-child) > a::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -168,50 +175,68 @@
     width: 0%;
     transition: var( --MainTransition);
   }
-  .main-nav > li > a:hover::before {
+  header .main-nav ul li a:hover::before {
     width: 100%;
   }
-  .main-nav > li:last-child > a:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    border-width: 5px;
-    border-bottom-width: 0;
-    border-style: solid;
-    border-color: var(--MainColor) transparent  transparent  transparent;
-    transition: var( --MainTransition);
+  header ul .check + .lang-menu-title {
+    display: block;
+    font-weight: 600;
+    color: var(--MainColor);
+    font-size: 18px;
+    padding: 16px;
+    cursor: pointer;
+    transition: var(--MainTransition);
   }
-  .main-nav > li:last-child > a:hover::after {
-  border-color: var(--MainAltColor) transparent  transparent  transparent;
-  transform: rotate(-180deg);
+  header ul .check:checked + .lang-menu-title {
+    color: var(--MainAltColor);
   }
-  header .main-menu {
+  header ul .check + .lang-menu-title i {
+    font-size: 14px;
+    transition: var(--MainTransition);
+  }
+  header ul .check:checked + .lang-menu-title i {
+    transform: rotate(180deg);
+    color: var(--MainAltColor);
+  }
+  header ul .lang-menu {
     position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--MainColor);
     width: 160px;
     padding: 8px 0;
     border-radius: 4px;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--MainTransition);
   }
-  .main-nav > li:last-child:hover .main-menu {
-    display: block;
+  header ul .check:checked ~ .lang-menu {
+    visibility: visible;
+    opacity: 1;
   }
-  header .menu a {
+  header ul .lang-menu .lang-btn {
+    border: none;
+    background: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #FFF;
+    width: 100%;
     font-size: 20px;
     font-weight: 400;
     margin: 10px 0px;
     padding: 8px 0;
+    cursor: pointer;
+    transition: var(--MainTransition);
+  }
+  header ul .lang-menu .lang-btn:hover {
+    color: var(--MainAltColor);
   }
   header .contact.bth {
     padding: 1.157rem 2.539rem;
     color: var(--MainAltColor);
-    background: linear-gradient(to right, #fff 50%, var(--MainAltColor) 50%);
+    background: linear-gradient(to right, #FFF 50%, var(--MainAltColor) 50%);
     background-size: 200% 99%;
     background-position: left bottom;
     border: none;
@@ -222,7 +247,7 @@
   }
   header .contact.bth:hover {
     background-position: right bottom;
-    color: #fff;
+    color: #FFF;
   }
 /* ----- Making The Header Section Responsive ----- */
   @media (max-width: 1199px) {
@@ -235,38 +260,49 @@
     }
   }
   @media (min-width: 992px) {
-    header .check + .bars {
+    header .check + .burger {
       display: none;
     }
   }
   @media (max-width: 991px) {
+    header {
+      box-shadow: 0 0 8px 0 #DDD;
+    }
+    header .container {
+      padding-top: 0;
+      min-height: 80px;
+    }
     header .contact.bth {
       display: none;
     }
-    header .main-nav {
-      display: none;
-    }
-    header .check:checked ~ .main-nav {
+    header .main-nav ul {
       position: absolute;
       left: 0;
-      display: flex;
+      top: calc(100% + 2px);
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       width: 100%;
-      top: calc(100% + 1px);
-      background-color: rgb(255 255 255 / 95%);
-      z-index: 1;
+      background-color: rgb(255 255 255 / 97%);
+      z-index: -11;
+      visibility: hidden;
+      opacity: 0;
+      transition: var(--MainTransition);
     }
-    .main-nav > li > a {
+    header .main-nav .check:checked ~ ul {
+      z-index: 111;
+      visibility: visible;
+      opacity: 1;
+    }
+    header .main-nav ul a {
       padding: 20px;
-      font-size: 28px;
+      font-size: 26px;
     }
-    header .main-menu {
-      width: 75%;
-      left: 50%;
-      transform: translateX(-50%);
-  }
+    header ul .check + .lang-menu-title {
+      padding: 20px;
+      font-size: 26px;
+    }
+    header ul .check + .lang-menu-title i {
+      font-size: 20px;
+    }
   }
 /* Styling The Landing Section */
   .landing > img {
@@ -564,6 +600,8 @@
     gap: 30px;
   }
   .portfolio .image {
+    height: 98.5%;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -614,12 +652,9 @@
     color: var(--MainColor);
   }
 /* ----- Making The Portfolio Section Responsive ----- */
-  @media (max-width: 680px) {
+  @media (max-width: 1199px) {
     .portfolio .images-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
   }
 /* Styling The Blog Section */
@@ -791,7 +826,7 @@
   }
 /* Styling The Footer Section */
   footer {
-    background-color: #314584;
+    background-color: #060606;
     padding-top: calc(var(--MainPaddingTop) - 25px);
   }
   footer > * {
@@ -827,20 +862,26 @@
     margin-bottom: 20px;
     font-weight: 400;
   }
+  footer .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
   footer .social a {
+    display: block;
     color: white;
-    font-size: 48px;
-    margin: 0px 30px;
+    font-size: 40px;
     transition: var(--MainTransition);
   }
   footer .social a:hover {
-    color: var(--MainAltColor);
+    color: var(--color);
   }
   footer .coded {
     text-align: center;
     margin: 50px auto 0;
     padding: 25px 15px;
-    border-top: 1px solid #fff;
+    border-top: 1px solid #333;
     text-transform: capitalize;
   }
   footer .coded .author {
@@ -848,14 +889,15 @@
     font-weight: 700;
   }
 /* ----- Making The Footer Section Responsive ----- */
-  @media (max-width: 675px) {
-    footer .links a,
+  @media (max-width: 767px) {
     footer .social a {
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 675px) {
+    footer .links a {
       display: block;
       width: fit-content;
       margin: 0 auto;
-    }
-    footer .social a {
-      margin: 30px auto;
     }
   }

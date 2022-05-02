@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Render All Elements Normally -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css" />
     <!-- CSS File -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Page icon -->
     <link rel="icon" type="image/png" href="Images/favicon.png" />
     <!-- Font Awesome Library -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css" />
     <meta 
     http-equiv="X-UA-Compatible" 
     content="IE=edge"
@@ -32,25 +32,27 @@
         <a href="#" class="logo">
           <img src="Images/logo.svg" alt="logo" class="logo-img" />
         </a>
-        <nav class="header-nav">
-          <input type="checkbox" id="bars" class="check">
-          <label for="bars" class="bars">
+        <nav class="main-nav">
+          <input type="checkbox" id="burger" class="check" />
+          <label for="burger" class="burger">
             <span></span>
             <span></span>
             <span></span>
           </label>
-          <ul class="main-nav">
+          <ul>
             <li><a href="#home" class="active">home.</a></li>
             <li><a href="#about">about us.</a></li>
             <li><a href="#portfolio">portfolio.</a></li>
             <li><a href="#blog">blog.</a></li>
             <li><a href="#contact">contact us.</a></li>
-            <li><a href="#">EN</a>
-              <div class="main-menu">
-                <ul class="menu">
-                  <li><a href="#">DE</a></li>
-                  <li><a href="#">ES</a></li>
-                </ul>
+            <li>
+              <input type="checkbox" id="lang-menu" class="check">
+              <label for="lang-menu" class="lang-menu-title">
+                EN <i class="fas fa-angle-down"></i>
+              </label>
+              <div class="lang-menu">
+                <button type="button" class="lang-btn">DE</button>
+                <button type="button" class="lang-btn">ES</button>
               </div>
             </li>
           </ul>
@@ -223,14 +225,14 @@
           <a href="#blog">blog.</a>
           <a href="#contact">contact.</a>
         </div>
-        <p class="copyright">&copy; 2019 - Doob,All Right Reserved</p>
+        <p class="copyright">&copy; 2022 - Doob, All Right Reserved</p>
         <div class="social">
-          <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#" title="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+          <a href="#" title="Facebook" style="--color: #1877F2;"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" title="Twitter" style="--color: #1DA1F2;"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" title="Dribble" style="--color: #ea4c89;"><i class="fa-brands fa-dribbble"></i></a>
         </div>
       </div>
-      <p class="coded">coded by <a href="https://github.com/AbdulrahmanFE" class="author">ABDULRAHMAN FE</a></p>
+      <p class="coded">coded by <a href="https://github.com/AbdulrahmanFE" target="_blank" rel="noopener noreferrer" class="author">ABDULRAHMAN</a></p>
     </footer>
   </body>
 </html>
